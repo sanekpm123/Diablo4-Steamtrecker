@@ -1,0 +1,8 @@
+{
+  "name": "d4-steam-proxy",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  }
+}
