@@ -1,0 +1,23 @@
+{
+  "name": "Diablo IV Achievement Tracker",
+  "short_name": "D4 Tracker",
+  "description": "Steam achievements and guides for Diablo IV",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d0a0a",
+  "theme_color": "#120d0d",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

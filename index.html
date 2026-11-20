@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#120d0d"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Diablo IV Steam achievement tracker — bilingual checklist, guides and progress sync.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/icon-192.png"><link rel="stylesheet" href="styles.css">
+<title>Sanctuary — Diablo IV Tracker</title>
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+ <div class="brand"><div class="sigil">IV</div><div><div class="eyebrow">SANCTUARY COMPENDIUM</div><h1>DIABLO <span>IV</span></h1></div></div>
+ <button id="settingsBtn" class="icon-btn" aria-label="Настройки">⚙</button>
+</header>
+<section class="hero">
+ <div class="hero-kicker">STEAM ACHIEVEMENT JOURNAL</div>
+ <h2>Путь к <em>100%</em></h2>
+ <p>Каждое испытание. Каждый трофей. Весь Санктуарий.</p>
+ <div class="progress-wrap"><div class="progress-meta"><span>ОБЩИЙ ПРОГРЕСС</span><strong id="progressText">0 / 45</strong></div><div class="progress-track"><div id="progressBar"></div></div><div class="stats"><div><b id="percent">0%</b><small>ЗАВЕРШЕНО</small></div><div><b id="remaining">45</b><small>ОСТАЛОСЬ</small></div><div><b id="done">0</b><small>ПОЛУЧЕНО</small></div></div></div>
+</section>
+<section class="toolbar">
+ <label class="search"><span>⌕</span><input id="search" placeholder="Найти достижение…" autocomplete="off"></label>
+ <div class="filters" id="filters"><button class="filter active" data-filter="all">Все</button><button class="filter" data-filter="remaining">Осталось</button><button class="filter" data-filter="done">Получено</button></div>
+ <div class="subtoolbar"><span id="countLabel">45 достижений</span><select id="category"><option value="all">Все категории</option></select><select id="sort"><option value="default">По порядку</option><option value="name">По названию</option><option value="category">По категории</option></select></div>
+</section>
+<main id="list" class="achievement-list"><div class="loading">Загружаем свитки Санктуария…</div></main>
+<footer><span>DIABLO IV · STEAM APP 2344520</span><span id="syncState">Локальный режим</span></footer>
+</div>
+<div id="detail" class="overlay hidden"><div class="dialog detail-dialog"><button class="close" data-close>×</button><div class="eyebrow" id="detailCategory"></div><h2 id="detailTitle"></h2><div class="english" id="detailEnglish"></div><p id="detailDesc"></p><div class="guide-title">ПУТЬ К ДОСТИЖЕНИЮ</div><div id="detailGuide" class="guide"></div><button id="detailToggle" class="primary wide">Отметить полученным</button></div></div>
+<div id="settings" class="overlay hidden"><div class="dialog"><button class="close" data-close>×</button><div class="eyebrow">CONNECTION & PREFERENCES</div><h2>Настройки</h2><p class="muted">Ручные отметки сохраняются на этом устройстве. Для безопасной Steam-синхронизации укажи адрес своего сервера-посредника — API-ключ не хранится в браузере.</p>
+<label class="field-label">SteamID64<input id="steamId" inputmode="numeric" placeholder="7656119…"></label>
+<label class="field-label">Адрес Steam-сервера<input id="apiBase" placeholder="https://your-domain.example"></label>
+<div class="button-row"><button id="syncBtn" class="primary">Синхронизировать Steam</button><button id="resetBtn" class="secondary">Сбросить локальные отметки</button></div>
+<p class="hint" id="settingsHint">Автосинхронизация требует запущенного backend из папки server/ и переменной STEAM_API_KEY на нём.</p>
+</div></div>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body></html>
